@@ -1,10 +1,38 @@
-# FillableArea
-#Problem
-Purpose of this project is to find the water fillable area of a given array. As an example, Lets say we have an array of {2, 3, 2, 4, 2, 4}. In this array fillable area is between item value 3,4 and 4,4.
-Such that, the program is written to working with a randomly generated array items. Additionally it contains a 2D view of the actual graph.
+### Problem
+Finding the fillable area of a given array. Consider the below items array. It contains  6 elements. Each element describe the height of each columns. So the total problem can be illustrated as below.F is fillable area and C is cell area. Only fillable area can be occupied by some other items to fill the space.
 
-#Solution
-There will be two type of cells such as Cell and EmptyCell. Cell represents the actual area and EmptyCell represents the potentally fillable area. Then we calculate each cell horizontally to identify whether it can hold some amount of liquid.
+int items[] = {2, 3, 1, 4, 4, 5}
 
-#More
-Just go through the Main.java class. It contains the core logic that I implemented.
+| [0] | [1] | [2] | [3] | [4] | [5] |
+|:-----|:-----|:---|:-----|:-----|:---
+|F|F|F|F|F|C|
+|F|F|F|C|C|C|
+|F|C|F|C|C|C|
+|C|C|F|C|C|C|
+|C|C|C|C|C|C|
+
+### Solution
+
+The solution for the given problem is as below. In the below table, only # items can be filled by another thing.
+
+| [0] | [1] | [2] | [3] | [4] | [5] |
+|:-----|:-----|:---|:-----|:-----|:---
+|F|F|F|F|F|C|
+|F|F|F|C|C|C|
+|F|C|#|C|C|C|
+|C|C|#|C|C|C|
+|C|C|C|C|C|C|
+
+### Approach
+- fill all items in a 2D array, so the arry will look like the above table
+- Then, process each rows(Not columns)
+- If there is some F within Cs then it's a fillable area\
+- Refer the Main.java to see the solution 
+
+License
+----
+
+MIT
+
+
+**Free Software, Hell Yeah!**
